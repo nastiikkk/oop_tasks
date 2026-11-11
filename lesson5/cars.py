@@ -13,11 +13,28 @@
 
 
 class Car:
-    pass
 
+    def __init__(self, brand, model, year):
+        self.brand = brand
+        self.model = model
+        self.year = year
+
+    def get_set_del(self):
+        self.model = 'aaa'
+        del self.model
+        return self.year
 
 class CarSlots:
-    pass
+    __slots__ = ('brand', 'model', 'year')
+    def __init__(self, brand, model, year):
+        self.brand = brand
+        self.model = model
+        self.year = year
+
+    def get_set_del(self):
+        self.model = 'aaa'
+        del self.model
+        return self.year
 
 
 car = Car('Toyota', 'Corolla', 2022)
